@@ -5,6 +5,7 @@ public function __construct()
 {
 	parent::__construct();
 	$this->load->model("Masuk_model");
+	//cek_login();
 	$this->load->library('form_validation');
 }
 public function index()
@@ -12,7 +13,7 @@ public function index()
 $data = array(
 'title' => 'View Data Surat',
 'surat' => $this->Masuk_model->getAll(),
-'content'=> 'admin/Surat_masuk/index'
+'content'=> 'admin/surat_masuk/index'
 );
 $this->load->view('admin/template/main',$data);
 }
@@ -37,7 +38,7 @@ public function getedit($id)
 $data = array(
 'title' => 'Update Data Surat Masuk',
 'surat' => $this->Masuk_model->getById($id),
-'content'=> 'admin/Surat_masuk/edit_form'
+'content'=> 'admin/surat_masuk/edit_form'
 );
 $this->load->view('admin/template/main',$data);
 }
@@ -47,11 +48,11 @@ $this->Masuk_model->editData();
 if($this->db->affected_rows()>0){
 $this->session->set_flashdata("success","Data user Berhasil DiUpdate");
 }
-redirect('admin/Surat_masuk');
+redirect('admin/surat_masuk');
 }
 function delete($id)
 {
 $this->Masuk_model->delete($id);
-redirect('admin/Surat_masuk');
+redirect('admin/surat_masuk');
 }
 }

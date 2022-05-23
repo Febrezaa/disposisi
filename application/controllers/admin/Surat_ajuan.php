@@ -13,7 +13,7 @@ public function index()
 $data = array(
 'title' => 'View Data Surat Pengajuan',
 'userlog'=> infoLogin(),
-'surat' => $this->db->where('is_active',1)->where('user_id',$user_id)->get('tb_surat_masuk')->result(),'content'=> 'Surat_ajuan/index');
+'surat' => $this->db->where('is_active',1)->where('user_id',$user_id)->get('tb_surat_masuk')->result(),'content'=> 'surat_ajuan/index');
 $this->load->view('template_user/main',$data);
 }
 public function add()

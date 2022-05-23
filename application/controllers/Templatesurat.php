@@ -12,7 +12,7 @@ public function index()
 {
 $data = array(
 'title' => 'View Data History',
-'userlog'=> infoLogin(),'template' => $this->Template_model->getAll(),'content'=> 'Template_surat/index'
+'userlog'=> infoLogin(),'template' => $this->Template_model->getAll(),'content'=> 'template_surat/index'
 );
 $this->load->view('template_user/main',$data);
 }

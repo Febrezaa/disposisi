@@ -72,9 +72,7 @@ public function delete($id)
 $this->deleteImage($id);
 $this->db->where('id',$id)->delete($this->_table);
 if($this->db->affected_rows()>0){
-$this->session->set_flashdata("success","Data user Berhasil D
-
-iDelete");
+$this->session->set_flashdata("success","Data user Berhasil DiDelete");
 }
 }
 private function deleteImage($id)
@@ -82,9 +80,7 @@ private function deleteImage($id)
 $surat = $this->getById($id);
 if ($surat->image != "no_image.jpg") {
 $filename = explode(".", $surat->image)[0];
-return array_map('unlink', glob(FCPATH."assets/photo/
-
-surat_masuk/$filename.*"));
+return array_map('unlink', glob(FCPATH."assets/photo/surat_masuk/$filename.*"));
 }
 }
 public function saveAjuan(){

@@ -18,46 +18,37 @@
 <?php endif; ?>
 <div class="card-body">
 <div class="table-responsive">
-<table class="table table-striped table-bordered table-hover
-
-" id="tabelsurat" width="100%" cellspacing="0">
+<table class="table table-striped table-bordered table-hover" id="tabelsurat" width="100%" cellspacing="0">
 <thead class="table-primary">
 <tr>
-<th>No.</th>
-<th>Nama Pengirim</th>
-<th>Perihal</th>
-<th>Tujuan Surat</th>
-<th>Tanggal Kirim</th>
-<th>Keterangan</th>
-<th>Action</th>
+        <th>No.</th>
+        <th>Nama Pengirim</th>
+        <th>Perihal</th>
+        <th>Tujuan Surat</th>
+        <th>Tanggal Kirim</th>
+        <th>Keterangan</th>
+        <th>Action</th>
 </tr>
 </thead>
 <tbody>
 <?php
 $no =1;
 foreach ($template as $suratdata) {
-echo "<tr>
+    echo "<tr>
 
-<td>$no</td>
-<td>$suratdata->nama</td>
-<td>$suratdata->perihal</td>
-<td>$suratdata->tujuan_surat</td>
-<td>$suratdata->tgl_kirim</td>
-<td>$suratdata->keterangan</td>
+        <td>$no</td>
+        <td>$suratdata->nama</td>
+        <td>$suratdata->perihal</td>
+        <td>$suratdata->tujuan_surat</td>
+        <td>$suratdata->tgl_kirim</td>
+        <td>$suratdata->keterangan</td>
 
 <td>
 <div>
-<a href=".base_url('templatesurat/getedit/' .
-$suratdata->id)." class='btn btn-sm btn-info'><i class='fas fa-edit'></i>
+<a href=".base_url('templatesurat/getedit/' .$suratdata->id)." class='btn btn-sm btn-info'><i class='fas fa-edit'></i>
 Edit</a>
 
-<a href=".base_url('templatesurat/delete/' .
-
-$suratdata->id)." class='btn btn-sm btn-danger'
-
-onclick='return confirm(\"Ingin mengapus data
-
-user ini?\");'><i class='fas fa-trash'></i> Hapus</a>
+<a href=".base_url('templatesurat/delete/' .$suratdata->id)." class='btn btn-sm btn-danger'onclick='return confirm(\"Ingin mengapus datauser ini?\");'><i class='fas fa-trash'></i> Hapus</a>
 
 <a href=".base_url('templatesurat/surat_ajuan/' . $suratdata->id)." class='btn btn-sm btn-info'><i class='fas fa-download'></i> Unduh</a>
 </div>
